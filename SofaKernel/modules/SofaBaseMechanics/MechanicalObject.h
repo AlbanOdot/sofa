@@ -453,6 +453,19 @@ protected :
     std::ofstream* m_gnuplotFileX;
     std::ofstream* m_gnuplotFileV;
 
+public :
+    VecCoord getVectorCoord(int index)
+    {
+        return index < vectorsCoord.size()  ? vectorsCoord[index]->getValue() : VecCoord();
+    }
+    VecDeriv getVectorDeriv(int index)
+    {
+        return index < vectorsDeriv.size()  ? vectorsDeriv[index]->getValue() : VecDeriv();
+    }
+    MatrixDeriv getMatrixDeriv(int index)
+    {
+        return index < vectorsMatrixDeriv.size()  ? vectorsMatrixDeriv[index]->getValue() : MatrixDeriv()  ;
+    }
 };
 
 template<> SOFA_BASE_MECHANICS_API
